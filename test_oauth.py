@@ -30,7 +30,6 @@ print 'Using authorize code %s to request OAuth session' % code
 session = service.get_auth_session(data={
     'scope': 'profile',
     'code': code,
-    'redirect_uri': redirect_uri,
 }, decoder=json.loads)
 print 'Got OAuth2 session with access token:', session.access_token
 
