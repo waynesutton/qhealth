@@ -3,8 +3,10 @@
 from flask import Flask, request, render_template, url_for, redirect, session
 from humanapi import get_authorize_url, get_auth_session
 
+import settings
+
 app = Flask(__name__)
-app.secret_key = 'z9r3YQsDrUVmzDmXII8Pemhwr9oDuZdVBdNwRjTkuQvssZQKoEnyflNAidNt95ew'
+app.secret_key = settings.SECRET_KEY
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -22,7 +24,7 @@ def humanapi_callback():
     # Get code from response
     code = request.args.get('code')
     if not code:
-        return 'code parameter must be provided in oauth2 callback', 400
+        return 'Error: code parameter must be provided in oauth2 callback', 400
 
     # Get an authorized session with HumanAPI
     auth_session = get_auth_session(code)

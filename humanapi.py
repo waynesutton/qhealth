@@ -1,11 +1,11 @@
 from rauth import OAuth2Service
 import json
 
-redirect_uri = 'http://localhost:5000/humanapi/callback'
+import settings
 
 HumanAPI = OAuth2Service(
-    client_id='9ecad85680972ea571a3af89f267d248526834d2',
-    client_secret='9b49f4368f8aab29536ab0c528921ae4382ac74f',
+    client_id=settings.CLIENT_ID,
+    client_secret=settings.CLIENT_SECRET,
     name='humanapi',
     authorize_url='https://user.humanapi.co/oauth/authorize',
     access_token_url='https://user.humanapi.co/oauth/token',
