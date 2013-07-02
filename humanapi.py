@@ -27,3 +27,11 @@ def get_auth_session(code, scope='profile'):
     }, decoder=json.loads)
 
     return session
+
+def recreate_session(access_token):
+    return OAuth2Session(
+        HumanAPI.client_id,
+        HumanAPI.client_secret,
+        access_token,
+        HumanAPI
+    )

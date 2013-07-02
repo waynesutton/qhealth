@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block subtitle %}- Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+<p>Your connected HumanAPI account: #<strong>{{ session.id }}</strong></p>
+<p>Your email is <strong>{{ session.email }}</strong></p>
+{% endblock %}
