@@ -14,13 +14,13 @@
 <!-- <p> BP: {{  session.all_blood_pressures  }}</p> -->
 <p> BMIs: <strong>{{  session.all_bmis['value']  }}</strong></p>
 <p> Sleep:
-	<ul>
+	<ol>
 	{% for  key in session.all_sleep.keys() %}
 	    {% if key != 'userId' and key != 'id'%}
 		<li> {{key}}: <strong>{{ session.all_sleep[key] }}</strong></li>
 		{% endif %}
 	{% endfor %}
-	</ul>
+	</ol>
 </p>
 <p> Weight: <strong>{{  session.all_weight.get('value')  }} kg</strong></p>
 

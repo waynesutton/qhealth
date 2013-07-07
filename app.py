@@ -52,12 +52,14 @@ def profile():
     return render_template('profile.html')
 
 
-@app.route('/location')
-def location():
-    # TODO: Pull in user's location data
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
-    # display in template
-    return render_template('location.html')
+
+@app.route('/team')
+def team():
+    return render_template('team.html')
 
 # ----------- Human API starts here ----------------
 
