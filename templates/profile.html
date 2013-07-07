@@ -3,26 +3,144 @@
 {% block subtitle %}- Profile{% endblock %}
 
 {% block content %}
-<h2>Profile Page</h2>
+<!-- <h2>Profile Page</h2> -->
 <!-- <p>Your connected HumanAPI account: #<strong>{{ session.id }}</strong></p> -->
-<p>Your email: <strong>{{ session.email }}</strong></p>
+<!-- <p>Your email: <strong>{{ session.email }}</strong></p> -->
+ <style type="text/css">
+#dashboardbox{
+    margin-top: 25px;
+    margin-left: 95px;
+}
 
+
+#bmicontain{
+    background-color: #FF8D72;
+    
+
+    }
+
+#bmibox {
+    padding: 20px;
+    background-color: #FF8D72;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 40px;
+}
+
+#bminumber {
+    padding: 20px;
+    background-color: #FF8D72;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+}
+
+
+
+#weightbox {
+    padding: 20px;
+    background-color: #FFD35B;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 40px;
+}
+
+#weightnumber {
+    padding: 20px;
+    background-color: #FFD35B;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+}
+#wakesleepcontainter{
+    background-color: #69CCFF;
+
+}
+#wakebox {
+     padding: 10px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+#wakenumber {
+     padding: 20px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+
+}
+#sleepbox {
+     padding: 10px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+#sleepnumber {
+     padding: 20px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+
+}
+
+
+
+
+    </style>
+
+
+<div id="dashboardbox">
+
+<div class="row">
+    <div class="span12"><h2>Your Quantified Health Dashboard</h2>
+
+
+    <div id="bmicontain" class="span5">
+        <div class="row">
+            <div id="bmibox" class="span4">BMI</div>
+            <div id="bminumber" class="span4">{{  session.all_bmis['value']  }}</div>
+        </div>
+    </div>
+
+    <div class="span5">
+        <div class="row">
+            <div id="weightbox" class="span4">Weight</div>
+            <div id="weightnumber" class="span4">{{  session.all_weight.get('value')  }} kg</div>
+        </div>
+    </div>
+
+
+<div id="wakesleepcontainter" class="row">
+    <div id="wakebox" class="span2"><i class="icon-sun icon-3x"></i>Wake Time</div>
+        <div id="wakenumber" class="span3">12</div>
+        <div id="sleepbox" class="span2"><i class="icon-moon icon-3x"></i>Sleep Time</div>
+        <div id="sleepnumber" class="span3">8</div>
+    </div>  
+</div> 
 
 <!-- <p> Profile:  profile </p> -->
 <!-- <p> Summary: {{  session.summary['weight']  }}</p> -->
 <!-- <p> Blood glucose: {{  session.all_blood_glucose  }}</p> -->
 <!-- <p> BP: {{  session.all_blood_pressures  }}</p> -->
-<p> BMIs: <strong>{{  session.all_bmis['value']  }}</strong></p>
-<p> Sleep:
-	<ol>
-	{% for  key in session.all_sleep.keys() %}
-	    {% if key != 'userId' and key != 'id'%}
-		<li> {{key}}: <strong>{{ session.all_sleep[key] }}</strong></li>
-		{% endif %}
-	{% endfor %}
-	</ol>
-</p>
-<p> Weight: <strong>{{  session.all_weight.get('value')  }} kg</strong></p>
+<!-- <p> BMIs: <strong>{{  session.all_bmis['value']  }}</strong></p> -->
+<!-- <p> Sleep: -->
+	<!-- <ol> -->
+	<!-- {% for  key in session.all_sleep.keys() %} -->
+	    <!-- {% if key != 'userId' and key != 'id'%} -->
+		<!-- <li> {{key}}: <strong>{{ session.all_sleep[key] }}</strong></li> -->
+		<!-- {% endif %} -->
+	<!-- {% endfor %} -->
+	<!-- </ol> -->
+<!-- </p> -->
+<!-- <p> Weight: <strong>{{  session.all_weight.get('value')  }} kg</strong></p> -->
 
 
 {% endblock %}

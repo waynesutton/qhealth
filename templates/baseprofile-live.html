@@ -34,19 +34,103 @@
     <link rel="stylesheet" href="assets/css/infine.css" type="text/css">
 
     <!--[if lt IE 9]>
-       	<link rel="stylesheet" id="ie8-css"  href="assets/css/ie8.css" type="text/css" media="all">
-	<![endif]-->
+        <link rel="stylesheet" id="ie8-css"  href="assets/css/ie8.css" type="text/css" media="all">
+    <![endif]-->
 
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
-	<title>QHealth</title>
+    <title>QHealth</title>
 
     <style type="text/css">
 #dashboardbox{
     margin-top: 25px;
     margin-left: 95px;
 }
+
+
+#bmicontain{
+    background-color: #FF8D72;
+    
+
+    }
+
+#bmibox {
+    padding: 20px;
+    background-color: #FF8D72;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 40px;
+}
+
+#bminumber {
+    padding: 20px;
+    background-color: #FF8D72;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+}
+
+
+
+#weightbox {
+    padding: 20px;
+    background-color: #FFD35B;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 40px;
+}
+
+#weightnumber {
+    padding: 20px;
+    background-color: #FFD35B;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+}
+#wakesleepcontainter{
+    background-color: #69CCFF;
+
+}
+#wakebox {
+     padding: 10px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+#wakenumber {
+     padding: 20px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+
+}
+#sleepbox {
+     padding: 10px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+#sleepnumber {
+     padding: 20px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+
+}
+
+
+
+
     </style>
+
 </head>
 
 <body data-spy="scroll" data-target=".main-navigation">
@@ -107,7 +191,7 @@
     <div class="span12"><h2>Your Quantified Health Dashboard</h2>
 
 
-    <div class="span5">
+    <div id="bmicontain" class="span5">
         <div class="row">
             <div id="bmibox" class="span4">BMI</div>
             <div id="bminumber" class="span4">1000</div>
@@ -122,11 +206,11 @@
     </div>
 
 
-<div class="row">
-    <div class="span2"><i class="icon-sun icon-3x"></i>Wake Time</div>
-        <div class="span3">12</div>
-        <div class="span2"><i class="icon-moon icon-3x"></i>Sleep Time</div>
-        <div class="span3">8</div>
+<div id="wakesleepcontainter" class="row">
+    <div id="wakebox" class="span2"><i class="icon-sun icon-3x"></i>Wake Time</div>
+        <div id="wakenumber" class="span3">12</div>
+        <div id="sleepbox" class="span2"><i class="icon-moon icon-3x"></i>Sleep Time</div>
+        <div id="sleepnumber" class="span3">8</div>
     </div>  
         
          </div> 
