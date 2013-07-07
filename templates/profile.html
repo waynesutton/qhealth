@@ -8,21 +8,21 @@
 <p>Your email: <strong>{{ session.email }}</strong></p>
 
 
-<p> Profile:  profile </p>
+<!-- <p> Profile:  profile </p> -->
 <!-- <p> Summary: {{  session.summary['weight']  }}</p> -->
 <!-- <p> Blood glucose: {{  session.all_blood_glucose  }}</p> -->
 <!-- <p> BP: {{  session.all_blood_pressures  }}</p> -->
-<p> BMIs: {{  session.all_bmis['value']  }}</p>
+<p> BMIs: <strong>{{  session.all_bmis['value']  }}</strong></p>
 <p> Sleep:
 	<ul>
 	{% for  key in session.all_sleep.keys() %}
-	    {% if key != 'userId' %}
+	    {% if key != 'userId' and key != 'id'%}
 		<li> {{key}}: <strong>{{ session.all_sleep[key] }}</strong></li>
 		{% endif %}
 	{% endfor %}
 	</ul>
 </p>
-<p> Weight: {{  session.all_weight.get('value')  }} kg</p>
+<p> Weight: <strong>{{  session.all_weight.get('value')  }} kg</strong></p>
 
 
 {% endblock %}
