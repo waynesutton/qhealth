@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-from flask import Flask, request, render_template, url_for, redirect, session
+from flask import Flask, request, render_template, url_for, redirect, session, flash
 from humanapi import get_authorize_url, get_auth_session, recreate_session
+from datetime import datetime, timedelta
+import json
 
 import settings
 
@@ -56,9 +58,22 @@ def profile():
     # Profile data is pulled from session and populated from humanapi_callback
 
     profile_session = recreate_session(session['access_token'])
-    all(profile_session)
+    session_all(profile_session)
+    series_data = long_series_activity(14, profile_session)
+
+    flash(chartData())
     return render_template('profile.html')
 
+@app.route('/chartData')
+def chartData():
+  # Returns json weight time series data
+
+    chart_session = recreate_session(session['access_token'])
+    session_all(chart_session)
+    series_data = long_series_activity(14, chart_session)
+
+
+    return series_data.json
 
 @app.route('/contact')
 def contact():
@@ -79,7 +94,7 @@ def logout():
 # ----------- Human API starts here ----------------
 
 # All events
-def all(x_session):
+def session_all(x_session):
   profile(x_session)
   summary(x_session)
   all_activity(x_session)
@@ -110,10 +125,23 @@ def activity(id, x_session):
   session['activity'] = x_session.get("activity/{0}".format(id)).json()
 
 def daily_activity(date, x_session):
-  session['daily_activity'] = x_session.get("activity/daily/{0}".format(date.strftime('%F'))).json()
+  session['daily_activity'] = x_session.get("activity/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 def series_activity(date, x_session):
-  session['series_activity'] = x_session.get("activity/series/{0}".format(date.strftime('%F'))).json()
+  session['series_activity'] = x_session.get("activity/series/{0}".format(date.strftime('%Y-%m-%d'))).json()
+
+def long_series_activity(daysago, x_session):
+  if daysago < 0:
+    return None
+
+  end_dt = datetime.now()
+  long_series = {}
+  for i in reversed(range(daysago)):
+    day_series = series_activity(end_dt - timedelta(i), x_session)
+    if day_series:
+        long_series.update(day_series)
+
+  session['long_series_activity'] = json.dumps(long_series)
 
 
 # Blood Glucose
@@ -124,7 +152,7 @@ def blood_glucose(id, x_session):
   session['blood_glucose'] = x_session.get("blood_glucose/{0}".format(id)).json()
 
 def daily_blood_glucose(date, x_session):
-  session['daily_blood_glucose'] = x_session.get("blood_glucose/daily/{0}".format(date.strftime('%F'))).json()
+  session['daily_blood_glucose'] = x_session.get("blood_glucose/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 
 # Blood presure
@@ -135,7 +163,7 @@ def blood_pressure(id, x_session):
     session['blood_pressure'] = x_session.get("blood_pressure/{0}".format(id)).json()
 
 def daily_blood_pressure(date, x_session):
-  session['daily_blood_pressure'] = x_session.get("blood_pressure/daily/{0}".format(date.strftime('%F'))).json()
+  session['daily_blood_pressure'] = x_session.get("blood_pressure/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 
 # BMI
@@ -146,7 +174,7 @@ def bmi(id, x_session):
   session['bmi'] = x_session.get("bmi/#{id}").json()
 
 def daily_bmi(date, x_session):
-  session['daily_bmi'] = x_session.get("bmi/daily/{0}".format(date.strftime('%F'))).json()
+  session['daily_bmi'] = x_session.get("bmi/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 
 # Body fat
@@ -157,7 +185,7 @@ def body_fat(id, x_session):
   session['body_fat'] = x_session.get("body_fat/{0}".format(id)).json()
 
 def daily_body_fat(date, x_session):
-  session['daily_body_fat'] = x_session.get("body_fat/daily/{0}".format(date.strftime('%F'))).json()
+  session['daily_body_fat'] = x_session.get("body_fat/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 
 # Genetics
@@ -173,7 +201,7 @@ def heart_rate(id, x_session):
   session['heart_rate'] = x_session.get("heart_rate/{0}".format(id)).json()
 
 def daily_heart_rate(date, x_session):
-  session['daily_heart_rate'] = x_session.get("heart_rate/daily/{0}".format(date.strftime('%F'))).json()
+  session['daily_heart_rate'] = x_session.get("heart_rate/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 
 # Height
@@ -184,7 +212,7 @@ def height(id, x_session):
   session['height'] = x_session.get("height/#{id}").json()
 
 def daily_height(date, x_session):
-  session['daily_height'] = x_session.get("height/daily/{0}".format(date.strftime('%F'))).json()
+  session['daily_height'] = x_session.get("height/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 
 # Location

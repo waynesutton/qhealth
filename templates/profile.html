@@ -23,6 +23,11 @@
 	</ol>
 </p>
 <p> Weight: <strong>{{  session.all_weight.get('value')  }} kg</strong></p>
+<canvas id="activityChart" width="400" height="400"></canvas>
+
+{% for message in get_flashed_messages() %}
+<p>{{message}}</p>
+{% endfor %}
 
 
 {% endblock %}
