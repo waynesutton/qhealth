@@ -1,24 +1,544 @@
 <!doctype html>
 <html>
     <head>
-        <title>Location App{% block subtitle %}{% endblock %}</title>
-    </head>
-    <body>
-        {% block nav %}
-        <ul class="menu">
-            <li>
-                <a href="{{ url_for('profile') }}">Profile Page</a>
-            </li>
-            <li>
-                <a href="{{ url_for('location') }}">My Location</a>
-            </li>
-            <li>
-                <a href="{{ url_for('index') }}">Log Out</a>
-            </li>
-        </ul>
-        {% endblock %}
+        <title>Q.Health{% block subtitle %}{% endblock %}</title> 
 
-        {% block content %}{% endblock %}
+         <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Q.Health -  quantified health">
+     <meta name="keywords" content="Q.Health,quantified health, quantified health ">
+    <meta name="description" content="Create Personal Quantified Health Profiles to share with the world.">
+
+    <meta name="keywords" content="quantified health" content="quantified health">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta property="og:title" content="Q.Health">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="Q.Health">
+    <meta property="og:description" content="Create Personal Quantified Health Profiles to share with the world.">
+
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='images/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url_for('static', filename='images/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url_for('static', filename='images/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="1024x1024" href="{{ url_for('static', filename='images/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='images/apple-touch-icon-57-precomposed.png') }}">
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/rs-plugin/css/settings.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/rs-plugin/css/fullwidth.css') }}" type="text/css">    
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='assets/icons/pictopro-normal/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='assets/icons/pictopro-outline/style.css') }}" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap-responsive.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fancybox/jquery.fancybox.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/infine.css') }}" type="text/css">
+
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" id="ie8-css"  href="assets/css/ie8.css" type="text/css" media="all">
+    <![endif]-->
+
+
+
+    </head>
+    
+<body data-spy="scroll" data-target=".main-navigation">
+{% block nav %}
+<div class="navigation">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+
+                <div class="logo">
+                    <a href="#nav-header" class="roll"> <!--<span class="icon-normal-infinitive logo-icon"></span>--><span><img src="images/qhealthlogo.png" width="134" height="30"></span></a>
+                </div><!-- /.logo -->
+
+                <div class="main-navigation nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="#nav-header">Home</a></li>
+                        <li><a href="#nav-speakers">Team</a></li>
+                        <!--<li><a href="#nav-pricing">Pricing</a></li>
+                        <li><a href="#nav-testimonials">Testimonials</a></li> -->
+                        <li><a href="#nav-contact">Contact</a></li>
+                         <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                         <li><a href="{{ url_for('index') }}">Logout</a></li>
+                    </ul>
+                </div><!-- /.main-navigation -->
+            </div><!-- /.container -->
+        </div><!-- /.navbar-inner -->
+    </div><!-- /.main-navigation -->
+</div><!-- /.navigation -->
+  {% endblock %}
+
+<div id="nav-header" class="header-wrapper">
+    <div class="header">
+
+        <div class="fullwidthbanner-container">         
+           <div class="fullwidthbanner">
+
+           </div>
+        </div>
+    </div><!-- /.header -->
+</div><!-- /.header-wrapper -->
+
+<div id="nav-subscribe" class="subscribe-wrapper">
+    <div class="subscribe">
+        <div class="container">
+            <div class="form row">
+                <div class="span8 offset2">
+                    <h4>Subscribe and get detailed information</h4>
+
+                    <div class="row">
+                        <div class="span6 offset1">
+<div id="centerform">
+                            <div id="wufoo-q7p5q9">
+<a href="http://socialwayne.wufoo.com/forms/q7p5q9"></a>
+</div>
+<script type="text/javascript">var q7p5q9;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'socialwayne', 
+'formHash':'q7p5q9', 
+'autoResize':true,
+'height':'261',
+'async':true,
+'header':'hide'};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { q7p5q9 = new WufooForm();q7p5q9.initialize(options);q7p5q9.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
+</div>
+                            <!--<form method="post" action="subscribe.php">
+                                <div>
+                                    <input type="email" class="span6 subscription-field" name="subscribe" placeholder="Your e-mail" required="required">
+
+                                    <button>
+                                        <span class="icon-normal-right-arrow-small"></span>
+                                    </button>
+                                </div>
+                            </form> -->
+
+                            <div class="success">
+                                <p>
+                                    Thank you for your interest.<br>
+                                    <i class="icon icon-normal-heart-rounded"></i>
+                                </p>
+                            </div><!-- /.success -->
+                        </div><!-- /.span6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.span8 -->
+            </div><!-- /.form -->
+        </div><!-- /.container -->
+    </div><!-- /.subscribe -->
+</div><!-- /.subscribe-wrapper -->
+
+<div id="nav-features" class="features-wrapper">
+    <div class="features">
+        <div class="features-inner container">
+            <div class="row">
+                <div class="item orange span4">
+                    <div class="row">
+                        <div class="wrapper-icon span1">
+                            <div class="background-icon">
+                                <i class="icon icon-outline-pointer"></i>
+                            </div><!-- /.background-icon -->
+                        </div><!-- /.wrapper-icon -->
+
+                        <div class="text-wrapper span3 pull-right">
+                            <h3>5 different places</h3>
+
+                            <p class="features-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan velit tincidunt ante commodo suscipit.
+                            </p>
+                        </div><!-- /.text-wrapper -->
+                    </div><!-- /.row -->
+                </div><!-- /.item -->
+
+                <div class="item blue span4">
+                    <div class="row">
+                        <div class="wrapper-icon span1">
+                            <div class="background-icon">
+                                <i class="icon icon-outline-clock"></i>
+                            </div><!-- /.background-icon -->
+                        </div><!-- /.wrapper-icon -->
+
+                        <div class="text-wrapper span3">
+                            <h3>24 hour workshops</h3>
+
+                            <p class="features-description">Class aptent taciti sociosqu ad litora torquent per conubia
+                                nostra, per inceptos himenaeos. Praesent fermentum iaculis </p>
+                        </div><!-- /.text-wrapper -->
+                    </div><!-- /.row -->
+                </div><!-- /.item -->
+
+                <div class="item yellow span4">
+                    <div class="row">
+                        <div class="wrapper-icon span1">
+                            <div class="background-icon">
+                                <i class="icon icon-outline-megaphone"></i>
+                            </div><!-- /.background-icon -->
+                        </div><!-- /.wrapper-icon -->
+
+                        <div class="text-wrapper span3">
+                            <h3>75 great speakers</h3>
+
+                            <p class="features-description">
+                                Duis accumsan metus vel nisi interdum fermentum. Duisviverra magna sit amet nisi ullamcorper consectetur.
+                            </p>
+                        </div><!-- /.text-wrapper -->
+                    </div><!-- /.row -->
+                </div><!-- /.item -->
+            </div><!-- /.row -->
+        </div><!-- /.features-inner -->
+    </div><!-- /.features -->
+</div><!-- /.features-wrapper -->
+
+<div class="parallax-wrapper parallax-first">
+    <div class="parallax">
+        <div class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <span class="parallax-title">What it means to be human</span>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.inner -->
+    </div><!-- /.parallax -->
+</div><!-- /.parallax-wrapper -->
+
+
+<div class="speakers-wrapper">
+    <div class="container">
+        <h2></h2>
+        <h4></h4>
+
+        <div id="nav-speakers"  class="speakers">
+            <ul  class="nav nav-tabs">
+                <li class="active"><a href="#tab-1" data-toggle="tab">Team</a></li>
+                
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab-1">
+                    <div class="row speaker">
+                        <div class="span2 image center">
+                            <div class="image-box">
+                                <img src="{{ url_for('static', filename='assets/pictures/wayne.jpg') }}" alt="">
+                            </div><!-- /.image-box -->
+                        </div><!-- /.image -->
+
+                        <div class="span7">
+                            <p class="name">Wayne Sutton</p>
+                            <p class="company"></p>
+                            <p class="talk-title">Design/UI/UX</p>
+                            <p class="time"><span class="time-start"></span> <a href="http://twitter.com/waynesutton"> @WayneSutton</a></p>
+                        </div><!-- /.span7 -->
+
+                        <div class="span3">
+                            <div class="about">
+                                <h4>Favorite Quote</h4>
+
+                                <p>
+                                    #keepmovingforward
+                                </p>
+                            </div><!-- /.about -->
+                        </div><!-- /.span3 -->
+                    </div><!-- /.speaker -->
+                   
+
+                    <div class="row speaker">
+                        <div class="span2 image center">
+                            <div class="image-box">
+                                <img src="{{ url_for('static', filename='assets/pictures/tumz.jpg') }}" alt="Tum Chaturapruek">
+                            </div>
+                        </div><!-- /.image -->
+
+                        <div class="span7">
+                            <p class="name">Tum Chaturapruek</p>
+                            <p class="company"></p>
+                            <p class="talk-title">Developer</p>
+                            <p class="time"><span class="time-start"></span> <a href="http://twitter.com/tummykungz"> @TummykungZ</a> </p>
+                        </div><!-- /.span7 -->
+
+                        <div class="span3">
+                            <div class="about">
+                                <h4>Favorite Quote</h4>
+
+                                <p>
+                                    #keeplearning
+                                </p>
+                            </div><!-- /.about -->
+                        </div><!-- /.span3 -->
+                    </div><!-- /.speaker -->
+
+                    <div class="row speaker">
+                        <div class="span2 image center">
+                            <div class="image-box">
+                                <img src="{{ url_for('static', filename='assets/pictures/speakers-2.jpg') }}" alt="">
+                            </div>
+                        </div><!-- /.image -->
+
+                        <div class="span7">
+                            <p class="name">Michelle Kang</p>
+                            <p class="company"></p>
+                            <p class="talk-title">UI/UX</p>
+                            <p class="time"><span class="time-start"></span> </p>
+                        </div><!-- /.span7 -->
+
+                        <div class="span3">
+                            <div class="about">
+                                <h4>Favorite Quote</h4>
+
+                                <p>
+                                    TBD
+                                </p>
+                            </div><!-- /.about -->
+                        </div><!-- /.span3 -->
+                    </div><!-- /.speaker -->
+                    
+
+                    <div class="row speaker">
+                        <div class="span2 image center">
+                            <div class="image-box">
+                                <img src="{{ url_for('static', filename='assets/pictures/speakers-3.jpg') }}" alt="">
+                            </div>
+                        </div><!-- /.image -->
+
+                        <div class="span7">
+                            <p class="name">Jonathan Lai</p>
+                            <p class="company"></p>
+                            <p class="talk-title">Developer</p>
+                            <p class="time"><span class="time-start"></span> - <a href="http://twitter.com/jonlai">@jonlai </a></p>
+                        </div><!-- /.span7 -->
+
+                        <div class="span3">
+                            <div class="about">
+                                <h4>Favorite Quote</h4>
+
+                                <p>
+                                   TBD
+                                </p>
+                            </div><!-- /.about -->
+                        </div><!-- /.span3 -->
+                    </div><!-- /.speaker -->
+
+
+
+                    <div class="row speaker">
+                        <div class="span2 image center">
+                            <div class="image-box">
+                                <img src="{{ url_for('static', filename='assets/pictures/speakers-2.jpg') }}" alt="">
+                            </div>
+                        </div><!-- /.image -->
+
+                        <div class="span7">
+                            <p class="name">Shadi Barhoumi </p>
+                            <p class="company"></p>
+                            <p class="talk-title">Developer</p>
+                            <p class="time"><span class="time-start"></span> -</p>
+                        </div><!-- /.span7 -->
+
+                        <div class="span3">
+                            <div class="about">
+                                <h4>Favorite Quote</h4>
+
+                                <p>TBD
+                                </p>
+                            </div><!-- /.about -->
+                        </div><!-- /.span3 -->
+                    </div><!-- /.speaker -->
+
+
+                    <div class="row speaker">
+                        <div class="span2 image center">
+                            <div class="image-box">
+                                <img src="{{ url_for('static', filename='assets/pictures/speakers-2.jpg') }}" alt="">
+                            </div>
+                        </div><!-- /.image -->
+
+                        <div class="span7">
+                            <p class="name">Tylor Louis</p>
+                            <p class="company"></p>
+                            <p class="talk-title">Developer</p>
+                            <p class="time"><span class="time-start"></span> - </p>
+                        </div><!-- /.span7 -->
+
+                        <div class="span3">
+                            <div class="about">
+                                <h4>Favorite Quote</h4>
+
+                                <p>
+                                    TBD
+                                </p>
+                            </div><!-- /.about -->
+                        </div><!-- /.span3 -->
+                    </div><!-- /.speaker -->
+                    
+
+                        
+
+
+                </div><!-- /.tab-1 -->
+                
+            </div><!-- /.tab-content -->
+        </div><!-- /.speakers -->
+    </div><!-- /.container -->
+</div><!-- /.speakers-wrapper -->
+
+
+
+
+
+<div class="parallax-wrapper parallax-second">
+    <div class="parallax">
+        
+    </div><!-- /.parallax -->
+</div><!-- /.parallax-wrapper -->
+
+<hr>
+
+
+
+<div class="our-partners-wrapper">
+    <div class="our-partners container">
+        <div class="our-partners-inner">
+            <h2>Big thanks to our partners</h2>
+
+            <div class="row">
+                <div class="span3 center">
+                    <a href="http://humanapi.co/"><img class="our-partners-logo" src="{{ url_for('static', filename='images/human.png') }}" alt="human api"></a>
+                </div><!-- /.span3 -->
+
+                <!--<div class="span3 center">
+                    <a href="http://graphicriver.net/"><img class="our-partners-logo" src="assets/pictures/logo-graphic-river.png" alt=""></a>
+                </div></.span3 
+
+                <div class="span3 center">
+                    <a href="http://3docean.net/"><img class="our-partners-logo" src="assets/pictures/logo-3d-ocean.png" alt=""></a>
+                </div>/.span3 
+
+                <div class="span3 center">
+                    <a href="http://photodune.net/"><img class="our-partners-logo" src="assets/pictures/logo-photo-dune.png" alt=""></a>
+                </div>/.span3 -->
+            </div><!-- /.row -->
+        </div><!-- /.our-partners-inner -->
+    </div><!-- /.our-partners -->
+</div><!-- /.our-partners-wrapper -->
+
+
+
+<div id="nav-contact" class="footer-wrapper">
+    <div class="footer container">
+        <div class="footer-inner">
+            <div class="row">
+                <div class="item span4">
+                    <h2>Contact us</h2>
+
+                    <address>
+                        <i class="icon icon-normal-pointer"></i><span class="title"><strong>QHealth</strong></span>
+
+                        <p>A <a href="http://humanapi.co/">Human/API Hackathon Project</a> </p>
+
+                        <p>San Francisco, CA</p>
+                    </address>
+
+                    <address>
+                        <i class="icon icon-normal-mail"></i><a href="mailto:#" class="e-mail">team@qhealth.org</a><br>
+                        <i class="icon icon-normal-phone"></i><span class="title">(415) 295-5605</span>
+                    </address>
+
+                    <!--<address>
+                        <i class="icon icon-normal-map-pointer"></i><a class="btn btn-grey">Show on Google
+                        maps</a>
+                    </address>-->
+                </div><!-- /.item -->
+
+                <div class="item span8">
+                    <h2>Any questions? Drop us a note</h2>
+
+                    <form class="contact-form footer-form" method="post" action="contact.php">
+                        <div class="row">
+                            <div class="span4">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="text" name="name" placeholder="Your name" required="required">
+                                        <span class="icon icon-normal-profile-male"></span>
+                                    </div><!-- /.controls -->
+                                </div><!-- /.control-group -->
+                            </div><!-- /.span4 -->
+
+                            <div class="span4">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="email" name="email" placeholder="Your e-mail" required="required">
+                                        <span class="icon icon-normal-mail"></span>
+                                    </div><!-- /.controls -->
+                                </div><!-- /.control-group -->
+                            </div><!-- /.span4 -->
+                        </div><!-- /.row -->
+
+                        <div class="row">
+                            <div class="span8">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <textarea name="message" placeholder="Your message" required="required"></textarea>
+                                        <span class="icon icon-normal-pencil"></span>
+                                    </div><!-- /.controls -->
+                                </div><!-- /.control-group -->
+                            </div><!-- /.span8 -->
+                        </div><!-- /.row -->
+
+                        <div class="form-actions">
+                            <input type="submit" class="btn btn-send span2" value="Send">
+                        </div><!-- /.form-actions -->
+                    </form><!-- /.footer-form -->
+                </div><!-- /.item -->
+            </div><!-- /.row -->
+        </div><!-- /.footer-inner -->
+    </div><!-- /.footer -->
+<!-- 
+    <div id="map"></div>/#map -->
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="copyright span9">
+                    &copy; 2013 Copyright by <a href="http://qhealth.org" class="">QHealth</a> <!--<a class="btn btn-grey"><strong>Buy theme</strong></a>-->
+                </div><!-- /.copyright -->
+
+                <div class="icons">
+                    <a href="http://twiter.com/qhealthorg" class="social-icon"><img src="{{ url_for('static', filename='assets/icons/icon-twitter.png') }}" alt=""></a><!-- 
+                    <a href="#" class="social-icon"><img src="assets/icons/icon-facebook.png" alt=""></a>
+                    <a href="#" class="social-icon"><img src="assets/icons/icon-youtube.png" alt=""></a>-->
+                </div><!-- /.icons -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer bottom -->
+</div><!-- /.footer-wrapper -->
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='assets/js/retina.js') }}"></script>
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='assets/js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='assets/js/placeholder.js') }}"></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename='assets/js/jquery.parallax-1.1.3.js') }}"></script>
+
     </body>
 </html>
 

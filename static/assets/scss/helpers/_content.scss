@@ -1,0 +1,39 @@
+.content-wrapper { background-color: #f7f7f7; padding-bottom: 50px;
+  .content {
+    h2 { color: $color-dark; font-weight: lighter; text-align: left; padding-top: 20px;}
+    h4 { font-weight: normal; padding-bottom: 20px; text-align: left; }
+
+    .cycle-pager { bottom: -5px; overflow: hidden; position: absolute; text-align: center; width: 100%; z-index: 500; }
+
+    .carousel { line-height: 22px; }
+    .carousel-indicators .active { background-color: rgba(0, 0, 0, 0.400) }
+    .carousel-indicators li { @include border-radius(50%); background-color: rgba(0, 0, 0, 0.102); cursor: pointer; height: 15px; margin-left: 15px; width: 15px; }
+    .content-inner { padding-top: 100px; }
+    .image-box { @include border-radius(20px); @include box-sizing(border-box); border: 10px solid rgba(0,0,0,0.05); margin-bottom: 60px;  }
+    .image { @include border-radius(10px); @include box-sizing(border-box); border: 5px solid $color-dark; overflow: hidden; }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .content-wrapper {
+    .content {
+      h4 { padding-bottom: 0px; }
+      .cycle-pager { bottom: -40px; }
+      .span5 { font-size: 12px; line-height: 18px; }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .content-wrapper { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; text-align: center;
+    .content {
+      h2 { text-align: center; padding-top: 0px;  }
+      h4 { text-align: center; padding-bottom: 10px; }
+
+      .cycle-pager { bottom: -50px; }
+      .content-inner { padding-top: 50px; }
+      .image { width: 100%; }
+      .image-box { margin-bottom: 20px; }
+    }
+  }
+}

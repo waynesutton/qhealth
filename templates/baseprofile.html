@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Q.Health -  quantified health">
+     <meta name="keywords" content="Q.Health,quantified health, quantified health ">
+    <meta name="description" content="Create Personal Quantified Health Profiles to share with the world.">
+
+    <meta name="keywords" content="quantified health" content="quantified health">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta property="og:title" content="Q.Health">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="Q.Health">
+    <meta property="og:description" content="Create Personal Quantified Health Profiles to share with the world.">
+
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='images/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url_for('static', filename='images/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url_for('static', filename='images/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="1024x1024" href="{{ url_for('static', filename='images/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='images/apple-touch-icon-57-precomposed.png') }}">
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/rs-plugin/css/settings.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/rs-plugin/css/fullwidth.css') }}" type="text/css">    
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="assets/icons/pictopro-normal/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/icons/pictopro-outline/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap-responsive.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fancybox/jquery.fancybox.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/infine.css') }}" type="text/css">
+
+    <!--[if lt IE 9]>
+       	<link rel="stylesheet" id="ie8-css"  href="assets/css/ie8.css" type="text/css" media="all">
+	<![endif]-->
+
+	<title>QHealth</title>
+</head>
+
+<body data-spy="scroll" data-target=".main-navigation">
+
+<div class="navigation">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+
+                <div class="logo">
+                    <a href="#nav-header" class="roll"> <!--<span class="icon-normal-infinitive logo-icon"></span>--><span><img src="images/qhealthlogo.png" width="134" height="30"></span></a>
+                </div><!-- /.logo -->
+
+                <div class="main-navigation nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="index.html#nav-speakers">Team</a></li>
+                        <!--<li><a href="#nav-pricing">Pricing</a></li>
+                        <li><a href="#nav-testimonials">Testimonials</a></li> -->
+                        <li><a href="index.html#nav-contact">Contact</a></li>
+                         <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div><!-- /.main-navigation -->
+            </div><!-- /.container -->
+        </div><!-- /.navbar-inner -->
+    </div><!-- /.main-navigation -->
+</div><!-- /.navigation -->
+
+<div id="nav-header" class="header-wrapper">
+    <div class="header">
+
+        <div class="fullwidthbanner-container">         
+           <div class="fullwidthbanner2">
+               {% block subtitle %}- Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+<p>Your connected HumanAPI account: #<strong>{{ session.id }}</strong></p>
+<p>Your email is <strong>{{ session.email }}</strong></p>
+{% endblock %}
+
+        </div>
+        </div>
+    </div><!-- /.header -->
+</div>
+<!-- /.header-wrapper -->
+
+<div id="nav-subscribe" class="subscribe-wrapper">
+    <div class="subscribe">
+        <div class="container">
+            
+
+</div>
+</div>
+</div>
+
+<div id="nav-contact" class="footer-wrapper2">
+    <div class="footer container">
+        <div class="footer-inner">
+            <div class="row">
+                
+
+            </div><!-- /.row -->
+        </div><!-- /.footer-inner -->
+    </div><!-- /.footer -->
+<!-- 
+    <div id="map"></div>/#map -->
+
+<!--
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="copyright span9">
+                    &copy; 2013 Copyright by <a href="http://qhealth.org" class="">QHealth</a> <!--<a class="btn btn-grey"><strong>Buy theme</strong></a>-->
+                </div><!-- /.copyright
+
+                <div class="icons">
+                    <a href="http://twiter.com/qhealthorg" class="social-icon"><img src="assets/icons/icon-twitter.png" alt=""></a><!-- 
+                    <a href="#" class="social-icon"><img src="assets/icons/icon-facebook.png" alt=""></a>
+                    <a href="#" class="social-icon"><img src="assets/icons/icon-youtube.png" alt=""></a>-->
+                </div><!-- /.icons -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer bottom -->
+</div><!-- /.footer-wrapper -->
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+
+
+<!--
+    <script type="text/javascript" src="assets/js/kinetic.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+
+    <script type="text/javascript" src="assets/js/countdown.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.carousel.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.center.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.scrollVert.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.swipe.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.caption2.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.localscroll-1.2.7-min.js"></script>
+
+<script type="text/javascript" src="assets/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="assets/fancybox/helpers/jquery.fancybox-media.js"></script>
+<script type="text/javascript" src="assets/js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<script type="text/javascript" src="assets/js/infine.js"></script>
+-->
+
+</body>
+</html>
