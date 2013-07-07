@@ -19,6 +19,11 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/humanapi')
+def humanapi():
+    return render_template('index.html')
+
+
 @app.route('/humanapi/callback')
 def humanapi_callback():
     # Get code from response
