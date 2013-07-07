@@ -46,6 +46,7 @@ def humanapi_callback():
 @app.route('/profile')
 def profile():
     # Profile data is pulled from session and populated from humanapi_callback
+
     profile_session = recreate_session(session['access_token'])
     all(profile_session)
     return render_template('profile.html')
@@ -78,6 +79,7 @@ def all(x_session):
 # Profile
 def profile(x_session):
   session['profile'] = x_session.get("profile").json()
+
 
 def summary(x_session):
   session['summary'] = x_session.get("").json()
@@ -113,7 +115,7 @@ def all_blood_pressures(x_session):
   session['all_blood_pressures'] = x_session.get("blood_pressure").json()
 
 def blood_pressure(id, x_session):
-  session['blood_pressure'] = x_session.get("blood_pressure/{0}".fomat(id)).json()
+    session['blood_pressure'] = x_session.get("blood_pressure/{0}".format(id)).json()
 
 def daily_blood_pressure(date, x_session):
   session['daily_blood_pressure'] = x_session.get("blood_pressure/daily/{0}".format(date.strftime('%F'))).json()
