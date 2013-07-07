@@ -1,3 +1,7 @@
 Flask==0.10.1
+Jinja2==2.7
+gunicorn==17.5
+oauthlib==0.4.0
 rauth==0.5.5
 requests==1.2.3
+requests-oauthlib==0.3.1
