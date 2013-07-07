@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Q.Health -  quantified health">
+     <meta name="keywords" content="Q.Health,quantified health, quantified health ">
+    <meta name="description" content="Create Personal Quantified Health Profiles to share with the world.">
+
+    <meta name="keywords" content="quantified health" content="quantified health">
+    <meta name="viewport" content="width=device-width">
+    
+    <meta property="og:title" content="Q.Health">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="Q.Health">
+    <meta property="og:description" content="Create Personal Quantified Health Profiles to share with the world.">
+
+
+   
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="assets/js/rs-plugin/css/settings.css" type="text/css">
+ <link rel="stylesheet" href="assets/js/rs-plugin/css/fullwidth.css" type="text/css">  
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="assets/icons/pictopro-normal/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/icons/pictopro-outline/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap-responsive.css" type="text/css">
+    <link rel="stylesheet" href="assets/fancybox/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/infine.css" type="text/css">
+
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" id="ie8-css"  href="assets/css/ie8.css" type="text/css" media="all">
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <title>QHealth</title>
+
+    <style type="text/css">
+#dashboardbox{
+    margin-top: 25px;
+    margin-left: 95px;
+}
+
+
+#bmicontain{
+    background-color: #FF8D72;
+    
+
+    }
+
+#bmibox {
+    padding: 20px;
+    background-color: #FF8D72;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 40px;
+}
+
+#bminumber {
+    padding: 20px;
+    background-color: #FF8D72;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+}
+
+
+
+#weightbox {
+    padding: 20px;
+    background-color: #FFD35B;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 40px;
+}
+
+#weightnumber {
+    padding: 20px;
+    background-color: #FFD35B;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+}
+#wakesleepcontainter{
+    background-color: #69CCFF;
+
+}
+#wakebox {
+     padding: 10px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+#wakenumber {
+     padding: 20px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+
+}
+#sleepbox {
+     padding: 10px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 12px;
+
+}
+
+#sleepnumber {
+     padding: 20px;
+    background-color: #69CCFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 60px;
+
+}
+
+
+
+
+    </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".main-navigation">
+
+<div class="navigation">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+
+                <div class="logo">
+                    <a href="#nav-header" class="roll"> <!--<span class="icon-normal-infinitive logo-icon"></span>--><span><img src="images/qhealthlogo.png" width="134" height="30"></span></a>
+                </div><!-- /.logo -->
+
+                <div class="main-navigation nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="index.html#nav-speakers">Team</a></li>
+                        <!--<li><a href="#nav-pricing">Pricing</a></li>
+                        <li><a href="#nav-testimonials">Testimonials</a></li> -->
+                        <li><a href="index.html#nav-contact">Contact</a></li>
+                         <li><a href="profile.html">Profile</a></li>
+                    </ul>
+                </div><!-- /.main-navigation -->
+            </div><!-- /.container -->
+        </div><!-- /.navbar-inner -->
+    </div><!-- /.main-navigation -->
+</div><!-- /.navigation -->
+
+<div id="nav-header" class="header-wrapper">
+    <div class="header">
+
+        <div class="fullwidthbanner-container">         
+           <div class="fullwidthbanner2">
+              
+
+
+
+               
+
+
+
+
+
+               <div class="fullwidthbanner2">
+
+
+   
+        
+
+<div id="dashboardbox">
+
+<div class="row">
+    <div class="span12"><h2>Your Quantified Health Dashboard</h2>
+
+
+    <div id="bmicontain" class="span5">
+        <div class="row">
+            <div id="bmibox" class="span4">BMI</div>
+            <div id="bminumber" class="span4">1000</div>
+        </div>
+    </div>
+
+    <div class="span5">
+        <div class="row">
+            <div id="weightbox" class="span4">Weight</div>
+            <div id="weightnumber" class="span4">1000</div>
+        </div>
+    </div>
+
+
+<div id="wakesleepcontainter" class="row">
+    <div id="wakebox" class="span2"><i class="icon-sun icon-3x"></i>Wake Time</div>
+        <div id="wakenumber" class="span3">12</div>
+        <div id="sleepbox" class="span2"><i class="icon-moon icon-3x"></i>Sleep Time</div>
+        <div id="sleepnumber" class="span3">8</div>
+    </div>  
+        
+         </div> 
+
+
+
+ 
+
+
+<!-- <p>Your connected HumanAPI account: #<strong>51d99d9b910c7cde07000036</strong></p> -->
+<p>Your email: <strong>waynesutton@gmail.com</strong></p>
+
+
+<!-- <p> Profile:  profile </p> -->
+<!-- <p> Summary: {u&#39;timestamp&#39;: u&#39;2013-07-07T09:21:57.983Z&#39;, u&#39;unit&#39;: u&#39;grams&#39;, u&#39;id&#39;: u&#39;51d9a3b512cc5f6236001f99&#39;, u&#39;value&#39;: 82000}</p> -->
+<!-- <p> Blood glucose: {u&#39;timestamp&#39;: u&#39;2013-07-07T09:21:47.894Z&#39;, u&#39;unit&#39;: u&#39;mg/dL&#39;, u&#39;id&#39;: u&#39;51d9a3ab910c7cde07002c8b&#39;, u&#39;userId&#39;: u&#39;51d99d9b910c7cde07000036&#39;, u&#39;value&#39;: 105}</p> -->
+<!-- <p> BP: {u&#39;timestamp&#39;: u&#39;2013-07-07T09:22:02.587Z&#39;, u&#39;id&#39;: u&#39;51d9a3ba12cc5f6236002273&#39;, u&#39;userId&#39;: u&#39;51d99d9b910c7cde07000036&#39;, u&#39;heartRate&#39;: 59, u&#39;value&#39;: {u&#39;systolic&#39;: 120, u&#39;unit&#39;: u&#39;mmHg&#39;, u&#39;diastolic&#39;: 75}}</p> -->
+<p> BMIs: <strong>20</strong></p>
+<p> Sleep:
+    <ol>
+    
+        
+    
+        
+        <li> endTime: <strong>2013-07-08T08:32:54.045Z</strong></li>
+        
+    
+        
+        <li> timeAwake: <strong>23</strong></li>
+        
+    
+        
+    
+        
+        <li> startTime: <strong>2013-07-07T23:48:37.044Z</strong></li>
+        
+    
+        
+        <li> timeAsleep: <strong>501</strong></li>
+        
+    
+    </ol>
+</p>
+<p> Weight: <strong>82000 kg</strong></p>
+
+
+
+
+        
+        </div>
+    </div><!-- /.header -->
+</div>
+<!-- /.header-wrapper -->
+
+
+        </div>
+        </div>
+    </div><!-- /.header -->
+</div>
+<!-- /.header-wrapper -->
+
+<div id="nav-subscribe" class="subscribe-wrapper">
+    <div class="subscribe">
+        <div class="container">
+            
+
+</div>
+</div>
+</div>
+
+<div id="nav-contact" class="footer-wrapper2">
+    <div class="footer container">
+        <div class="footer-inner">
+            <div class="row">
+                
+
+            </div><!-- /.row -->
+        </div><!-- /.footer-inner -->
+    </div><!-- /.footer -->
+<!-- 
+    <div id="map"></div>/#map -->
+
+<!--
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="copyright span9">
+                    &copy; 2013 Copyright by <a href="http://qhealth.org" class="">QHealth</a> <!--<a class="btn btn-grey"><strong>Buy theme</strong></a>-->
+                </div><!-- /.copyright
+
+                <div class="icons">
+                    <a href="http://twiter.com/qhealthorg" class="social-icon"><img src="assets/icons/icon-twitter.png" alt=""></a><!-- 
+                    <a href="#" class="social-icon"><img src="assets/icons/icon-facebook.png" alt=""></a>
+                    <a href="#" class="social-icon"><img src="assets/icons/icon-youtube.png" alt=""></a>-->
+                </div><!-- /.icons -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer bottom -->
+</div><!-- /.footer-wrapper -->
+
+
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+
+<!--
+    <script type="text/javascript" src="assets/js/kinetic.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+
+    <script type="text/javascript" src="assets/js/countdown.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.carousel.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.center.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.scrollVert.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.swipe.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cycle2.caption2.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.localscroll-1.2.7-min.js"></script>
+
+<script type="text/javascript" src="assets/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="assets/fancybox/helpers/jquery.fancybox-media.js"></script>
+<script type="text/javascript" src="assets/js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+<script type="text/javascript" src="assets/js/infine.js"></script>
+-->
+
+</body>
+</html>
