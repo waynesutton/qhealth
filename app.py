@@ -59,9 +59,7 @@ def profile():
 
     profile_session = recreate_session(session['access_token'])
     session_all(profile_session)
-    long_series_activity(7, profile_session)
 
-    flash(chartData())
     return render_template('profile.html')
 
 @app.route('/chartData')
@@ -70,10 +68,23 @@ def chartData():
 
     chart_session = recreate_session(session['access_token'])
     session_all(chart_session)
-    long_series_activity(7, chart_session)
-    series_data = session['long_series_activity']
+    series_data = long_series_activity(7, chart_session)
 
-    return series_data
+    pretty_series = {'startTime': series_data[0]['startTime'],
+        'series': []}
+
+    minute_offset = 0
+    last_minute = 0
+    for day in series_data:
+        minute_offset = last_minute
+        for point in day['series']:
+            pretty_series['series'].append(dict(
+                minute=(point['minute'] + minute_offset),
+                level=point['level']))
+            last_minute = point['minute'] + minute_offset
+
+
+    return pretty_series
 
 @app.route('/contact')
 def contact():
@@ -128,21 +139,22 @@ def daily_activity(date, x_session):
   session['daily_activity'] = x_session.get("activity/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 def series_activity(date, x_session):
- session['series_activity'] = x_session.get("activity/series/{0}".format(date.strftime('%Y-%m-%d'))).json()
+    session['series_activity'] = x_session.get("activity/series/{0}".format(date.strftime('%Y-%m-%d'))).json()
+def get_series_activity(date, x_session):
+    return x_session.get("activity/series/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 def long_series_activity(daysago, x_session):
-  if daysago < 0:
-    return None
+    if daysago < 0:
+        return None
 
-  end_dt = datetime.now()
-  long_series = {}
-  for i in reversed(range(daysago)):
-    series_activity(end_dt - timedelta(i), x_session)
-    day_series = session['series_activity']
-    if day_series:
-        long_series.update(day_series)
+    end_dt = datetime.now()
+    long_series = []
+    for i in reversed(range(daysago)):
+        day_series = get_series_activity(end_dt - timedelta(i), x_session)
+        if day_series:
+            long_series.append(day_series)
 
-  session['long_series_activity'] = json.dumps(long_series) 
+    return long_series 
 
 # Blood Glucose
 def all_blood_glucose(x_session):
