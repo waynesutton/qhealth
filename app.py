@@ -18,11 +18,9 @@ def index():
     # Display intro page with login button that posts to here
     return render_template('index.html')
 
-
 @app.route('/humanapi')
 def humanapi():
-    return render_template('index.html')
-
+    return redirect(url_for('index'))
 
 @app.route('/humanapi/callback')
 def humanapi_callback():
