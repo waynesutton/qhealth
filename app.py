@@ -10,7 +10,9 @@ app.secret_key = settings.SECRET_KEY
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    print "haha"
     if request.method == 'POST':
+        print "tada"
         redirect_uri = url_for('humanapi_callback', _external=True)
         authorize_url = get_authorize_url(redirect_uri)
         return redirect(authorize_url)

@@ -61,7 +61,7 @@
                 </a>
 
                 <div class="logo">
-                    <a href="#nav-header" class="roll"> <!--<span class="icon-normal-infinitive logo-icon"></span>--><span><img src="images/qhealthlogo.png" width="134" height="30"></span></a>
+                    <a href="#nav-header" class="roll"> <!--<span class="icon-normal-infinitive logo-icon"></span>--><span><img src="{{ url_for('static', filename='images/qhealthlogo.png') }}" width="134" height="30"></span></a>
                 </div><!-- /.logo -->
 
                 <div class="main-navigation nav-collapse collapse">
@@ -71,24 +71,28 @@
                         <!--<li><a href="#nav-pricing">Pricing</a></li>
                         <li><a href="#nav-testimonials">Testimonials</a></li> -->
                         <li><a href="#nav-contact">Contact</a></li>
-                         <li><a href="{{ url_for('profile') }}">Profile</a></li>
-                         <li><a href="{{ url_for('index') }}">Logout</a></li>
+                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                        <li><a href="{{ url_for('index') }}">Logout</a></li>
                     </ul>
                 </div><!-- /.main-navigation -->
             </div><!-- /.container -->
         </div><!-- /.navbar-inner -->
     </div><!-- /.main-navigation -->
 </div><!-- /.navigation -->
-  {% endblock %}
+{% endblock %}
 
 <div id="nav-header" class="header-wrapper">
     <div class="header">
+        
+        <div class="fullwidthbanner-container">   
 
-        <div class="fullwidthbanner-container">         
            <div class="fullwidthbanner">
-
+            {% block content %}  
+            {% endblock %}
            </div>
+           
         </div>
+
     </div><!-- /.header -->
 </div><!-- /.header-wrapper -->
 
