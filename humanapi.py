@@ -1,4 +1,5 @@
 from rauth import OAuth2Service
+from rauth import OAuth2Session
 import json
 
 import settings
@@ -21,10 +22,13 @@ def get_authorize_url(redirect_uri):
 
 def get_auth_session(code, scope='profile'):
     # retrieve the authenticated session (response is a JSON string, so we need a custom decoder)
-    session = HumanAPI.get_auth_session(data={
-        'scope': scope,
-        'code': code,
-    }, decoder=json.loads)
+    session = HumanAPI.get_auth_session(
+        data={
+            'scope': scope,
+            'code': code,
+        },
+        decoder=json.loads
+    )
 
     return session
 

@@ -4,6 +4,21 @@
 
 {% block content %}
 <h2>Profile Page</h2>
-<p>Your connected HumanAPI account: #<strong>{{ session.id }}</strong></p>
+<p>Your connected HumanAPI account is #<strong>{{ session.id }}</strong></p>
 <p>Your email is <strong>{{ session.email }}</strong></p>
+
+
+<p> Profile:  profile </p>
+<p> Summary: {{  session.summary  }}</p>
+<p> All activities: {{  session.all_activity  }}</p>
+<p> Blood glucose: {{  session.all_blood_glucose  }}</p>
+<p> BP: {{  session.all_blood_pressures  }}</p>
+<p> BMIs: {{  session.all_bmis  }}</p>
+<p> BF: {{  session.all_body_fats  }}</p>
+<p> HR: {{  session.all_heart_rates  }}</p>
+<p> Heights: {{  session.all_heights  }}</p>
+<p> Location: {{  session.all_locations  }}</p>
+<p> Sleep: {{  session.all_sleep  }}</p>
+<p> Weight: {{  session.all_weight  }}</p>
+
 {% endblock %}

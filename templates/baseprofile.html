@@ -31,8 +31,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/rs-plugin/css/fullwidth.css') }}" type="text/css">    
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700" rel="stylesheet" type="text/css">
-    <link href="assets/icons/pictopro-normal/style.css" rel="stylesheet" type="text/css">
-    <link href="assets/icons/pictopro-outline/style.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='assets/icons/pictopro-normal/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='assets/icons/pictopro-outline/style.css') }}" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap-responsive.css') }}" type="text/css">
@@ -59,7 +59,7 @@
                 </a>
 
                 <div class="logo">
-                    <a href="#nav-header" class="roll"> <!--<span class="icon-normal-infinitive logo-icon"></span>--><span><img src="images/qhealthlogo.png" width="134" height="30"></span></a>
+                    <a href="#nav-header" class="roll"> <!--<span class="icon-normal-infinitive logo-icon"></span>--><span><img src="{{ url_for('static', filename='images/qhealthlogo.png') }}" width="134" height="30"></span></a>
                 </div><!-- /.logo -->
 
                 <div class="main-navigation nav-collapse collapse">
