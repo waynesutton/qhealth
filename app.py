@@ -59,7 +59,7 @@ def profile():
 
     profile_session = recreate_session(session['access_token'])
     session_all(profile_session)
-    series_data = long_series_activity(14, profile_session)
+    long_series_activity(7, profile_session)
 
     flash(chartData())
     return render_template('profile.html')
@@ -70,10 +70,10 @@ def chartData():
 
     chart_session = recreate_session(session['access_token'])
     session_all(chart_session)
-    series_data = long_series_activity(14, chart_session)
+    long_series_activity(7, chart_session)
+    series_data = session['long_series_activity']
 
-
-    return series_data.json
+    return series_data
 
 @app.route('/contact')
 def contact():
@@ -128,7 +128,7 @@ def daily_activity(date, x_session):
   session['daily_activity'] = x_session.get("activity/daily/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 def series_activity(date, x_session):
-  session['series_activity'] = x_session.get("activity/series/{0}".format(date.strftime('%Y-%m-%d'))).json()
+ session['series_activity'] = x_session.get("activity/series/{0}".format(date.strftime('%Y-%m-%d'))).json()
 
 def long_series_activity(daysago, x_session):
   if daysago < 0:
@@ -137,12 +137,12 @@ def long_series_activity(daysago, x_session):
   end_dt = datetime.now()
   long_series = {}
   for i in reversed(range(daysago)):
-    day_series = series_activity(end_dt - timedelta(i), x_session)
+    series_activity(end_dt - timedelta(i), x_session)
+    day_series = session['series_activity']
     if day_series:
         long_series.update(day_series)
 
-  session['long_series_activity'] = json.dumps(long_series)
-
+  session['long_series_activity'] = json.dumps(long_series) 
 
 # Blood Glucose
 def all_blood_glucose(x_session):
