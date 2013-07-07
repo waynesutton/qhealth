@@ -18,9 +18,15 @@ def index():
     # Display intro page with login button that posts to here
     return render_template('index.html')
 
-@app.route('/humanapi')
+@app.route('/humanapi', methods=['GET', 'POST'])
 def humanapi():
-    return redirect(url_for('index'))
+    if request.method == 'POST':
+        redirect_uri = url_for('humanapi_callback', _external=True)
+        authorize_url = get_authorize_url(redirect_uri)
+        return redirect(authorize_url)
+
+    # Display intro page with login button that posts to here
+    return render_template('humanapi.html')
 
 @app.route('/humanapi/callback')
 def humanapi_callback():
