@@ -1,0 +1,72 @@
+.features-wrapper { background-color: $color-dark;
+  .features { background-color: rgba(0,0,0,0.1); padding: 70px 0px;
+    .features-inner {
+      h3 { line-height: 28px; margin: 15px 0px 10px 0px; font-weight: lighter; }
+
+      .background-icon { @include border-radius(50%); @include box-sizing(border-box); background-color: $color-dark; border: 2px solid rgba(255,255,255,0.1); height: 70px; line-height: 66px; text-align: center; width: 100%; }
+      .features-description { color: #fff; }
+
+      .orange {
+        h3 { color: #ff8d72; }
+        .icon { color: #ff8d72; font-size: 55px; width: 67px; }
+      }
+
+      .blue {
+        h3 { color: #69ccff; }
+        .icon { color: #69ccff; font-size: 55px; width: 67px; }
+      }
+
+      .yellow {
+        h3 { color: #ffd35c; }
+        .icon { color: #ffd35c; font-size: 55px; width: 67px; }
+      }
+    }
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+  .features-wrapper {
+    .features {
+      .features-inner {
+        .background-icon { height: 60px; line-height: 57px; }
+        .orange .icon,
+        .blue .icon,
+        .yellow .icon { font-size: 45px; width: 57px; }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .features-wrapper {
+    .features {
+      .features-inner {
+        .background-icon { height: 43px; line-height: 39px; margin-top: 20px; }
+        .orange .icon,
+        .blue .icon,
+        .yellow .icon	 { font-size: 36px; width: 39px; }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .features-wrapper { margin-left: -20px; margin-right: -20px;
+    .features { padding: 0px; padding-left: 20px; padding-right: 20px;
+      .features-inner {
+        .item { padding-bottom: 30px; text-align: center; }
+        h3 { font-size: 28px; }
+        .wrapper-icon { margin: 0px; padding: 0px 0px 30px 0px; }
+        .background-icon { display: inline-block; height: 90px; line-height: 85px; margin: 0px; width: auto;}
+        .orange .icon,
+        .blue .icon,
+        .yellow .icon { font-size: 86px; width: 86px; }
+        .orange { margin-top: 20px; }
+      }
+
+      .wrapper-icon { text-align: center; margin-top: 10px; padding-bottom: 90px;}
+      .text-wrapper { text-align: center; margin-bottom: 10px;}
+
+    }
+  }
+}
