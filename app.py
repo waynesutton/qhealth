@@ -35,6 +35,8 @@ def humanapi_callback():
     if not code:
         return 'Error: code parameter must be provided in oauth2 callback', 400
 
+    session['logged_in'] = True
+
     # Get an authorized session with HumanAPI
     auth_session = get_auth_session(code)
 
@@ -66,6 +68,13 @@ def contact():
 @app.route('/team')
 def team():
     return render_template('team.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You were logged out')
+    return redirect(url_for(''))
 
 # ----------- Human API starts here ----------------
 
