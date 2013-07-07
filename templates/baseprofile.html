@@ -19,25 +19,25 @@
 
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="1024x1024" href="images/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url_for('static', filename='images/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url_for('static', filename='images/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url_for('static', filename='images/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="1024x1024" href="{{ url_for('static', filename='images/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='images/apple-touch-icon-57-precomposed.png') }}">
 
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link rel="stylesheet" href="assets/js/rs-plugin/css/settings.css" type="text/css">
-    <link rel="stylesheet" href="assets/js/rs-plugin/css/fullwidth.css" type="text/css">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/rs-plugin/css/settings.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/js/rs-plugin/css/fullwidth.css') }}" type="text/css">    
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700" rel="stylesheet" type="text/css">
     <link href="assets/icons/pictopro-normal/style.css" rel="stylesheet" type="text/css">
     <link href="assets/icons/pictopro-outline/style.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/bootstrap-responsive.css" type="text/css">
-    <link rel="stylesheet" href="assets/fancybox/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/infine.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap-responsive.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fancybox/jquery.fancybox.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/infine.css') }}" type="text/css">
 
     <!--[if lt IE 9]>
        	<link rel="stylesheet" id="ie8-css"  href="assets/css/ie8.css" type="text/css" media="all">
@@ -137,7 +137,7 @@
 
 
 
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
 
 
 <!--
